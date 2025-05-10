@@ -3,6 +3,7 @@ import { User } from "../../../types";
 import { UserRow } from "./UserRow";
 import { Pagination } from "../../common/Pagination";
 import { UserDetailsModal } from "./UserDetailsModal";
+import { useTranslation } from "react-i18next";
 
 interface UsersListProps {
   users: User[];
@@ -11,6 +12,7 @@ interface UsersListProps {
   currentPage: number;
   onPageChange: (page: number) => void;
   itemsPerPage: number;
+  totalItems?: number;
 }
 
 export const UsersList: React.FC<UsersListProps> = ({
@@ -20,7 +22,9 @@ export const UsersList: React.FC<UsersListProps> = ({
   currentPage,
   onPageChange,
   itemsPerPage,
+  totalItems = 100,
 }) => {
+  const { t } = useTranslation();
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
 
   const handleUserSelect = (userId: number) => {
@@ -42,12 +46,12 @@ export const UsersList: React.FC<UsersListProps> = ({
   if (error) {
     return (
       <div className="text-center p-8 text-red-500">
-        <p>Error loading users: {error.message}</p>
+        <p>{t("common.error")}: {error.message}</p>
         <button 
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
           onClick={() => window.location.reload()}
         >
-          Try Again
+          {t("common.tryAgain")}
         </button>
       </div>
     );
@@ -56,7 +60,7 @@ export const UsersList: React.FC<UsersListProps> = ({
   if (users.length === 0) {
     return (
       <div className="text-center p-8 text-gray-500 dark:text-gray-400">
-        No users found. Try adjusting your filters.
+        {t("users.noUsersFound")}
       </div>
     );
   }
@@ -68,19 +72,19 @@ export const UsersList: React.FC<UsersListProps> = ({
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                Name
+                {t("userDetails.fullName")}
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                Email
+                {t("userDetails.email")}
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                Company
+                {t("userDetails.company")}
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                City
+                {t("userDetails.city")}
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                Actions
+                {t("common.actions")}
               </th>
             </tr>
           </thead>
@@ -98,7 +102,7 @@ export const UsersList: React.FC<UsersListProps> = ({
 
       <Pagination 
         currentPage={currentPage}
-        totalItems={100} // This would typically come from API
+        totalItems={totalItems}
         itemsPerPage={itemsPerPage}
         onPageChange={onPageChange}
       />

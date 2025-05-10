@@ -1,6 +1,7 @@
 import React from "react";
 import { User } from "../../../types";
 import { usePrefetchUser } from "../../../hooks/useUsers";
+import { useTranslation } from "react-i18next";
 
 interface UserRowProps {
   user: User;
@@ -8,6 +9,7 @@ interface UserRowProps {
 }
 
 export const UserRow: React.FC<UserRowProps> = ({ user, onSelect }) => {
+  const { t } = useTranslation();
   const prefetchUser = usePrefetchUser();
   
   const handleMouseEnter = () => {
@@ -21,7 +23,7 @@ export const UserRow: React.FC<UserRowProps> = ({ user, onSelect }) => {
       onMouseEnter={handleMouseEnter}
       tabIndex={0}
       role="button"
-      aria-label={`View details for ${user.name}`}
+      aria-label={`${t("common.view")} ${t("common.details")} ${t("common.for")} ${user.name}`}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           onSelect(user.id);
@@ -69,7 +71,7 @@ export const UserRow: React.FC<UserRowProps> = ({ user, onSelect }) => {
             onSelect(user.id);
           }}
         >
-          View
+          {t("common.view")}
         </button>
       </td>
     </tr>

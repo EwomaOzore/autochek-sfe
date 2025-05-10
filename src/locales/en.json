@@ -9,7 +9,9 @@
     "details": "Details",
     "close": "Close",
     "back": "Back",
-    "view": "View"
+    "view": "View",
+    "actions": "Actions",
+    "for": "for"
   },
   "navigation": {
     "dashboard": "Dashboard",

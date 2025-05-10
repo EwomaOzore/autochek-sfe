@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface PaginationProps {
   currentPage: number;
@@ -15,6 +16,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   onPageChange,
   maxPageButtons = 5,
 }) => {
+  const { t } = useTranslation();
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   
   if (totalPages <= 1) {
@@ -54,9 +56,9 @@ export const Pagination: React.FC<PaginationProps> = ({
     <nav className="flex items-center justify-between border-t border-gray-200 dark:border-gray-700 px-4 py-3 sm:px-6" aria-label="Pagination">
       <div className="hidden sm:block">
         <p className="text-sm text-gray-700 dark:text-gray-300">
-          Showing <span className="font-medium">{Math.min((currentPage - 1) * itemsPerPage + 1, totalItems)}</span> to{" "}
-          <span className="font-medium">{Math.min(currentPage * itemsPerPage, totalItems)}</span> of{" "}
-          <span className="font-medium">{totalItems}</span> results
+          {t("users.pagination.showing")} <span className="font-medium">{Math.min((currentPage - 1) * itemsPerPage + 1, totalItems)}</span> {t("users.pagination.to")}{" "}
+          <span className="font-medium">{Math.min(currentPage * itemsPerPage, totalItems)}</span> {t("users.pagination.of")}{" "}
+          <span className="font-medium">{totalItems}</span> {t("users.pagination.results")}
         </p>
       </div>
       
@@ -69,12 +71,12 @@ export const Pagination: React.FC<PaginationProps> = ({
               ? "text-gray-400 dark:text-gray-500 cursor-not-allowed"
               : "text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
           }`}
-          aria-label="Previous page"
+          aria-label={t("users.pagination.previous")}
         >
-          Previous
+          {t("users.pagination.previous")}
         </button>
         
-        <div className="hidden md:flex ml-3">
+        <div className="hidden md:flex space-x-1 ml-1">
           {startPage > 1 && (
             <>
               <button
@@ -85,7 +87,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                       ? "z-10 bg-blue-50 dark:bg-blue-900 border-blue-500 dark:border-blue-700 text-blue-600 dark:text-blue-300"
                       : "bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                   }`}
-                aria-label="Page 1"
+                aria-label={`${t("users.pagination.page")} 1`}
                 aria-current={currentPage === 1 ? "page" : undefined}
               >
                 1
@@ -109,7 +111,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                     ? "z-10 bg-blue-50 dark:bg-blue-900 border-blue-500 dark:border-blue-700 text-blue-600 dark:text-blue-300"
                     : "bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                 }`}
-              aria-label={`Page ${page}`}
+              aria-label={`${t("users.pagination.page")} ${page}`}
               aria-current={currentPage === page ? "page" : undefined}
             >
               {page}
@@ -132,7 +134,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                       ? "z-10 bg-blue-50 dark:bg-blue-900 border-blue-500 dark:border-blue-700 text-blue-600 dark:text-blue-300"
                       : "bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                   }`}
-                aria-label={`Page ${totalPages}`}
+                aria-label={`${t("users.pagination.page")} ${totalPages}`}
                 aria-current={currentPage === totalPages ? "page" : undefined}
               >
                 {totalPages}
@@ -149,9 +151,9 @@ export const Pagination: React.FC<PaginationProps> = ({
               ? "text-gray-400 dark:text-gray-500 cursor-not-allowed"
               : "text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
           }`}
-          aria-label="Next page"
+          aria-label={t("users.pagination.next")}
         >
-          Next
+          {t("users.pagination.next")}
         </button>
       </div>
     </nav>

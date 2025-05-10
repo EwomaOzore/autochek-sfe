@@ -29,14 +29,64 @@ apiClient.interceptors.response.use(
     }
 );
 
+const filterUsers = (users: User[], params?: UserSearchParams): User[] => {
+    if (!params) return users;
+    
+    let filteredUsers = [...users];
+    
+    if (params.search) {
+        const searchTerm = params.search.toLowerCase();
+        filteredUsers = filteredUsers.filter(user => 
+            user.name.toLowerCase().includes(searchTerm) || 
+            user.email.toLowerCase().includes(searchTerm) || 
+            user.username.toLowerCase().includes(searchTerm)
+        );
+    }
+    
+    if (params.company) {
+        filteredUsers = filteredUsers.filter(user => 
+            user.company.name === params.company
+        );
+    }
+    
+    if (params.city) {
+        filteredUsers = filteredUsers.filter(user => 
+            user.address.city === params.city
+        );
+    }
+    
+    if (params.sortBy) {
+        filteredUsers.sort((a, b) => {
+            const aValue = a[params.sortBy as keyof User];
+            const bValue = b[params.sortBy as keyof User];
+            
+            if (typeof aValue === 'string' && typeof bValue === 'string') {
+                return params.sortOrder === 'asc' 
+                    ? aValue.localeCompare(bValue) 
+                    : bValue.localeCompare(aValue);
+            }
+            
+            return 0;
+        });
+    }
+    
+    return filteredUsers;
+};
+
 export const UserService = {
     getUsers: async (params?: PaginationParams & UserSearchParams): Promise<User[]> => {
-        const config: AxiosRequestConfig = {};
-        if (params) {
-            config.params = params;
+        const response: AxiosResponse<User[]> = await apiClient.get('/users');
+        let users = response.data;
+        
+        users = filterUsers(users, params);
+        
+        if (params?.page && params?.limit) {
+            const startIndex = (params.page - 1) * params.limit;
+            const endIndex = startIndex + params.limit;
+            users = users.slice(startIndex, endIndex);
         }
-        const response: AxiosResponse<User[]> = await apiClient.get('/users', config);
-        return response.data;
+        
+        return users;
     },
 
     getUserById: async (id: number): Promise<User> => {

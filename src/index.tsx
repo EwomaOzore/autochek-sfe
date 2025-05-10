@@ -3,15 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from './context/ThemeContext';
-import './i18n'; // Import i18n configuration
+import './i18n';
 import './index.css';
 import router from './routes';
-
-// Initialize MSW in development
-// if (process.env.NODE_ENV === 'development') {
-//   const { worker } = require('./mocks/browser');
-//   worker.start();
-// }
 
 // Create a client for React Query
 const queryClient = new QueryClient({

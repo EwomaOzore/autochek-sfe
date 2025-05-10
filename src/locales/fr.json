@@ -1,0 +1,94 @@
+{
+  "common": {
+    "appName": "Tableau de Bord Autochek",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "tryAgain": "Réessayer",
+    "search": "Rechercher",
+    "noResults": "Aucun résultat trouvé",
+    "details": "Détails",
+    "close": "Fermer",
+    "back": "Retour",
+    "view": "Voir"
+  },
+  "navigation": {
+    "dashboard": "Tableau de Bord",
+    "users": "Utilisateurs",
+    "settings": "Paramètres",
+    "statistics": "Statistiques"
+  },
+  "theme": {
+    "light": "Mode Clair",
+    "dark": "Mode Sombre",
+    "toggle": "Changer de Thème"
+  },
+  "dashboard": {
+    "title": "Tableau de Bord Utilisateurs",
+    "activityOverview": "Aperçu de l'Activité Utilisateur"
+  },
+  "users": {
+    "list": "Liste des Utilisateurs",
+    "search": "Rechercher par nom, email ou nom d'utilisateur...",
+    "noUsersFound": "Aucun utilisateur trouvé. Essayez d'ajuster vos filtres.",
+    "filters": "Filtres",
+    "reset": "Réinitialiser",
+    "sortBy": "Trier par",
+    "default": "Par défaut",
+    "nameAZ": "Nom (A-Z)",
+    "nameZA": "Nom (Z-A)",
+    "emailAZ": "Email (A-Z)",
+    "emailZA": "Email (Z-A)",
+    "usernameAZ": "Nom d'utilisateur (A-Z)",
+    "usernameZA": "Nom d'utilisateur (Z-A)",
+    "company": "Entreprise",
+    "allCompanies": "Toutes les Entreprises",
+    "city": "Ville",
+    "allCities": "Toutes les Villes",
+    "pagination": {
+      "showing": "Affichage de",
+      "to": "à",
+      "of": "sur",
+      "results": "résultats",
+      "previous": "Précédent",
+      "next": "Suivant",
+      "page": "Page"
+    }
+  },
+  "userDetails": {
+    "title": "Profil Utilisateur",
+    "personalInfo": "Informations Personnelles",
+    "contactInfo": "Coordonnées",
+    "fullName": "Nom complet",
+    "username": "Nom d'utilisateur",
+    "email": "Adresse email",
+    "phone": "Téléphone",
+    "website": "Site web",
+    "address": "Adresse",
+    "coordinates": "Coordonnées",
+    "company": "Entreprise",
+    "userActivity": "Activité de l'Utilisateur",
+    "recentPosts": "Publications Récentes",
+    "noPosts": "Aucune publication trouvée pour cet utilisateur.",
+    "taskCompletion": "Réalisation des Tâches",
+    "progress": "Progrès",
+    "todoList": "Liste des Tâches",
+    "noTodos": "Aucune tâche trouvée pour cet utilisateur.",
+    "activityStats": "Statistiques d'Activité",
+    "activityScore": "Score d'Activité",
+    "completionRate": "Taux de Complétion",
+    "tasks": "Tâches",
+    "lastActive": "Dernière Activité"
+  },
+  "charts": {
+    "bar": "Barre",
+    "line": "Ligne",
+    "pie": "Camembert",
+    "noData": "Aucune donnée disponible à afficher"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Page non trouvée",
+    "message": "Désolé, nous n'avons pas trouvé la page que vous cherchez.",
+    "goHome": "Retour à l'accueil"
+  }
+} 

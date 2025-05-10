@@ -1,0 +1,94 @@
+{
+  "common": {
+    "appName": "Autochek Dashboard",
+    "loading": "Loading...",
+    "error": "Error",
+    "tryAgain": "Try Again",
+    "search": "Search",
+    "noResults": "No results found",
+    "details": "Details",
+    "close": "Close",
+    "back": "Back",
+    "view": "View"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "settings": "Settings",
+    "statistics": "Statistics"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "toggle": "Toggle Theme"
+  },
+  "dashboard": {
+    "title": "User Dashboard",
+    "activityOverview": "User Activity Overview"
+  },
+  "users": {
+    "list": "Users List",
+    "search": "Search by name, email, or username...",
+    "noUsersFound": "No users found. Try adjusting your filters.",
+    "filters": "Filters",
+    "reset": "Reset",
+    "sortBy": "Sort By",
+    "default": "Default",
+    "nameAZ": "Name (A-Z)",
+    "nameZA": "Name (Z-A)",
+    "emailAZ": "Email (A-Z)",
+    "emailZA": "Email (Z-A)",
+    "usernameAZ": "Username (A-Z)",
+    "usernameZA": "Username (Z-A)",
+    "company": "Company",
+    "allCompanies": "All Companies",
+    "city": "City",
+    "allCities": "All Cities",
+    "pagination": {
+      "showing": "Showing",
+      "to": "to",
+      "of": "of",
+      "results": "results",
+      "previous": "Previous",
+      "next": "Next",
+      "page": "Page"
+    }
+  },
+  "userDetails": {
+    "title": "User Profile",
+    "personalInfo": "Personal Information",
+    "contactInfo": "Contact Information",
+    "fullName": "Full name",
+    "username": "Username",
+    "email": "Email address",
+    "phone": "Phone",
+    "website": "Website",
+    "address": "Address",
+    "coordinates": "Coordinates",
+    "company": "Company",
+    "userActivity": "User Activity",
+    "recentPosts": "Recent Posts",
+    "noPosts": "No posts found for this user.",
+    "taskCompletion": "Task Completion",
+    "progress": "Progress",
+    "todoList": "Todo List",
+    "noTodos": "No todos found for this user.",
+    "activityStats": "Activity Stats",
+    "activityScore": "Activity Score",
+    "completionRate": "Completion Rate",
+    "tasks": "Tasks",
+    "lastActive": "Last Active"
+  },
+  "charts": {
+    "bar": "Bar",
+    "line": "Line",
+    "pie": "Pie",
+    "noData": "No data available to display"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Page not found",
+    "message": "Sorry, we couldn't find the page you're looking for.",
+    "goHome": "Go back home"
+  }
+} 

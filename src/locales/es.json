@@ -1,0 +1,94 @@
+{
+  "common": {
+    "appName": "Panel de Control Autochek",
+    "loading": "Cargando...",
+    "error": "Error",
+    "tryAgain": "Intentar de nuevo",
+    "search": "Buscar",
+    "noResults": "No se encontraron resultados",
+    "details": "Detalles",
+    "close": "Cerrar",
+    "back": "Volver",
+    "view": "Ver"
+  },
+  "navigation": {
+    "dashboard": "Panel de Control",
+    "users": "Usuarios",
+    "settings": "Configuración",
+    "statistics": "Estadística"
+  },
+  "theme": {
+    "light": "Modo Claro",
+    "dark": "Modo Oscuro",
+    "toggle": "Cambiar Tema"
+  },
+  "dashboard": {
+    "title": "Panel de Control de Usuarios",
+    "activityOverview": "Resumen de Actividad del Usuario"
+  },
+  "users": {
+    "list": "Lista de Usuarios",
+    "search": "Buscar por nombre, correo o nombre de usuario...",
+    "noUsersFound": "No se encontraron usuarios. Intente ajustar sus filtros.",
+    "filters": "Filtros",
+    "reset": "Restablecer",
+    "sortBy": "Ordenar por",
+    "default": "Predeterminado",
+    "nameAZ": "Nombre (A-Z)",
+    "nameZA": "Nombre (Z-A)",
+    "emailAZ": "Correo (A-Z)",
+    "emailZA": "Correo (Z-A)",
+    "usernameAZ": "Nombre de usuario (A-Z)",
+    "usernameZA": "Nombre de usuario (Z-A)",
+    "company": "Empresa",
+    "allCompanies": "Todas las Empresas",
+    "city": "Ciudad",
+    "allCities": "Todas las Ciudades",
+    "pagination": {
+      "showing": "Mostrando",
+      "to": "a",
+      "of": "de",
+      "results": "resultados",
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "page": "Página"
+    }
+  },
+  "userDetails": {
+    "title": "Perfil de Usuario",
+    "personalInfo": "Información Personal",
+    "contactInfo": "Información de Contacto",
+    "fullName": "Nombre completo",
+    "username": "Nombre de usuario",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "website": "Sitio web",
+    "address": "Dirección",
+    "coordinates": "Coordenadas",
+    "company": "Empresa",
+    "userActivity": "Actividad del Usuario",
+    "recentPosts": "Publicaciones Recientes",
+    "noPosts": "No se encontraron publicaciones para este usuario.",
+    "taskCompletion": "Finalización de Tareas",
+    "progress": "Progreso",
+    "todoList": "Lista de Tareas",
+    "noTodos": "No se encontraron tareas para este usuario.",
+    "activityStats": "Estadísticas de Actividad",
+    "activityScore": "Puntuación de Actividad",
+    "completionRate": "Tasa de Finalización",
+    "tasks": "Tareas",
+    "lastActive": "Última Actividad"
+  },
+  "charts": {
+    "bar": "Barra",
+    "line": "Línea",
+    "pie": "Circular",
+    "noData": "No hay datos disponibles para mostrar"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Página no encontrada",
+    "message": "Lo sentimos, no pudimos encontrar la página que buscas.",
+    "goHome": "Volver al inicio"
+  }
+} 

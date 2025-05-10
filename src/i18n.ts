@@ -1,0 +1,39 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+// Import language translations
+import translationEN from './locales/en.json';
+import translationFR from './locales/fr.json';
+import translationES from './locales/es.json';
+
+// the translations
+const resources = {
+  en: {
+    translation: translationEN
+  },
+  fr: {
+    translation: translationFR
+  },
+  es: {
+    translation: translationES
+  }
+};
+
+i18n
+  // pass the i18n instance to react-i18next
+  .use(initReactI18next)
+  // init i18next
+  .init({
+    resources,
+    fallbackLng: 'en',
+    debug: process.env.NODE_ENV === 'development',
+    
+    interpolation: {
+      escapeValue: false, // not needed for react as it escapes by default
+    },
+    
+    // common namespace used around the application
+    defaultNS: 'translation'
+  });
+
+export default i18n; 
